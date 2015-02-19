@@ -1,0 +1,37 @@
+from django.conf.urls import patterns, url, include
+from tenthoughts import views
+from django.contrib import admin
+
+
+urlpatterns = patterns('',
+        url(r'^$', views.user_login, name='home'),
+	    url(r'^login/$', views.user_login, name='login'),
+	    url(r'^logout/$', views.user_logout, name='logout'),
+	    url(r'^register/$', views.register, name='register'),
+	    url(r'^retreivePassword/$', views.retreivePassword, name='Retreive Password'),
+	    url(r'^submitButton/$', views.register_about, name='register_SubmitButton'),
+	    url(r'^register_followers/$', views.register_followers, name='register_followers'),
+	    url(r'^follow/(?P<client>[\w\-]+)/$', views.follow, name='follow'),
+            url(r'^unfollow/(?P<client>[\w\-]+)/$', views.unfollow, name='unfollow'),
+	    url(r'^register_followers/(?P<client>[\w\-]+)/$', views.register_follow, name='register follow'),
+	    url(r'^community/(?P<bschool>[\w\-]+)/$', views.community, name='community'),
+	    url(r'^submit_articles/', views.submitArticle, name='submit articles'),
+	    url(r'^home/$', views.home, name='home'),
+	    url(r'^about/$', views.about, name='about'),
+	    url(r'^followers/$', views.followers, name='followers'),
+	    url(r'^followFriends/$', views.followFriends, name='followFriends'),
+	    url(r'^submitArticles/$', views.submitArticles, name='Submit Articles'),
+	    url(r'^featuredArticles/$', views.featuredArticles, name='Featured Articles'),
+	    url(r'^10ThoughtsfeaturedArticles/$', views.lastWeekFeaturedArticles, name='Last Week Featured Articles'),
+	    url(r'^improvements/$', views.improvements, name='What can we do better'),
+	    url(r'^browserInstructions/$', views.instructions, name='instructions'),
+	    url(r'^blog/$', views.blog, name='10Thoughts Blog'),
+	    url(r'^accountPreferences/$', views.accountPreferences, name='Account Preferences'),
+   	    url(r'^dardenFeaturedArticles/$', views.dardenFeaturedArticles, name='Darden Featured Articles'),
+	    url(r'^yaleFeaturedArticles/$', views.yaleFeaturedArticles, name='Yale Featured Articles'),
+	    url(r'^referFriend/$', views.referFriend, name='Refer A Friend'),
+	    url(r'^buttontest/$', views.buttontest, name= 'button test'),
+	    url(r'^loginSuccess/$', views.loginSuccess, name= 'loginSuccess'),
+	    url(r'^remote_submit/(?P<article_string>[\w|\W]+)/$', views.remote_submit, name = 'remote submit'),
+	    url(r'^accounts/login/$', views.button_user_login, name = 'remote submit not logged in'),
+                    )
